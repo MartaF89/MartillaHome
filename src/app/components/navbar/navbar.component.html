@@ -1,0 +1,87 @@
+<!-- Sfondo -->
+<div class="bg-image"></div>
+<nav class="navbar fixed-top">
+  <div
+    class="container-fluid d-flex justify-content-between align-items-center"
+  >
+    <!-- Bottone hamburger a sinistra -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="openOffcanvas(offcanvasTemplate)"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Logo al centro -->
+    <a
+      class="navbar-brand mx-auto d-flex flex-column align-items-center"
+      href="#"
+    >
+      <span class="brand-name">Martilla</span>
+      <span class="brand-sub">HOME</span>
+    </a>
+
+    <!-- Spazio vuoto a destra -->
+    <div style="width: 40px"></div>
+  </div>
+
+  <!-- Offcanvas (menu che compare da sinistra) -->
+  <div
+    class="offcanvas offcanvas-start"
+    tabindex="-1"
+    id="offcanvasNavbar"
+    aria-labelledby="offcanvasNavbarLabel"
+  >
+    <ng-template #offcanvasTemplate let-offcanvas>
+      <div class="ngb-offcanvas-header">
+        <!-- <h5 class="ngb-offcanvas-title">Menu</h5> -->
+        <button
+          type="button"
+          class="btn-close"
+          (click)="offcanvas.dismiss()"
+        ></button>
+      </div>
+      <div class="ngb-offcanvas-body">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link menu-link" href="#">🏠 Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu-link" href="#">ℹ️ Chi Siamo</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu-link" href="#">🛋️ Servizi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link menu-link" href="#">📞 Contatti</a>
+          </li>
+        </ul>
+      </div>
+    </ng-template>
+  </div>
+</nav>
+
+<!-- Div prenotazioni sopra lo sfondo -->
+<div class="booking-card-row">
+  <form class="booking-form-row">
+    <div class="form-group">
+      <label for="checkin">Da:</label>
+      <input type="date" id="checkin" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="checkout">A:</label>
+      <input type="date" id="checkout" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="guests">Ospiti:</label>
+      <select id="guests" class="form-control">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4+</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Prenota</button>
+  </form>
+</div>

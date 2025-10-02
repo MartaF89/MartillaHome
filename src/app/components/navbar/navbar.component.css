@@ -1,0 +1,156 @@
+/* Sfondo */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url("/roma.jpg") center/cover no-repeat;
+  z-index: -1; /* dietro a tutto */
+}
+
+/* Navbar logo */
+.navbar-brand .brand-name {
+  font-family: "Pacifico", cursive;
+  font-size: 3rem;
+  color: rgb(179, 21, 179);
+}
+
+.navbar-brand .brand-sub {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: rgb(179, 21, 179);
+}
+
+/* Offcanvas */
+.offcanvas {
+  background: linear-gradient(
+    to right,
+    rgba(254, 245, 152, 0.8),
+    rgba(254, 245, 152, 0.2)
+  );
+  color: #4a2c2a;
+  padding: 2rem; /* spazio interno più generoso */
+}
+
+/* Titolo offcanvas */
+.offcanvas .offcanvas-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #b315b3; /* viola */
+  font-size: 1.8rem;
+}
+
+/* Link offcanvas */
+.offcanvas .nav-link {
+  font-size: 1.8rem; /* più grandi */
+  margin: 15px 0;
+  color: #4a2c2a;
+  transition: color 0.3s, transform 0.2s;
+  display: block; /* assicura che l'hover prenda tutta la larghezza */
+}
+
+/* Hover sui link */
+.offcanvas .nav-link:hover {
+  color: #b315b3; /* viola */
+  transform: scale(1.05); /* leggero ingrandimento */
+}
+/* Titolo offcanvas */
+.menu-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  color: #b315b3;
+  font-size: 1.8rem;
+}
+
+/* Link offcanvas */
+.menu-link {
+  font-size: 1.5rem; /* più grandi */
+  margin: 15px 0;
+  color: #4a2c2a;
+  transition: color 0.3s, transform 0.2s;
+  display: block;
+}
+
+/* Hover sui link */
+.menu-link:hover {
+  color: #b315b3;
+  transform: scale(1.05);
+}
+.btn-close {
+  margin-left: auto; /* spinge il bottone a destra */
+  margin-top: 10px; /* margine sopra */
+}
+
+/* Div prenotazioni sopra lo sfondo */
+.booking-card-row {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  max-width: 900px;
+  width: 90%;
+}
+
+.booking-form-row {
+  display: flex;
+  flex-wrap: wrap; /* per mobile */
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.booking-form-row .form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 150px; /* larghezza minima 150px */
+}
+
+.booking-form-row .btn {
+  flex: 0 0 120px; /* larghezza fissa pulsante */
+  padding: 0.6rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: #b315b3;
+  border: none;
+  color: white;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.booking-form-row .btn:hover {
+  background-color: #9a0f9a;
+  transform: scale(1.02);
+}
+
+/* Label e input */
+.booking-form-row label {
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #4a2c2a;
+}
+
+.booking-form-row .form-control {
+  padding: 0.4rem;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Responsive: mobile */
+@media (max-width: 768px) {
+  .booking-form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .booking-form-row .btn {
+    width: 100%;
+  }
+}

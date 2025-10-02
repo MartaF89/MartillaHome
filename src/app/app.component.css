@@ -1,0 +1,229 @@
+/* ----------------------- */
+/* Sezione Home con immagine */
+/* ----------------------- */
+.home-section {
+  background: url("/roma.jpg") center/cover no-repeat;
+  height: 100vh;
+  position: relative;
+}
+
+.booking-card-row {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  width: 90%;
+  max-width: 900px;
+}
+
+/* ----------------------- */
+/* Sezioni successive con sfondo bianco */
+/* ----------------------- */
+.apartment-details-wrapper,
+.about-details-wrapper,
+.section {
+  background-color: #ffffff;
+  padding: 2rem 1rem;
+}
+
+/* Container sezione appartamento */
+.apartment-details,
+.about-details {
+  display: flex;
+  gap: 2rem;
+  max-width: 1500px;
+  width: 95%;
+  margin: 0 auto;
+  padding: 3rem 5rem;
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+}
+
+/* Layout invertito per Chi Siamo */
+.about-details {
+  flex-direction: row;
+}
+
+/* Colonna testo */
+.details-text {
+  flex: 1;
+  min-width: 300px;
+  padding: 2rem;
+  background: linear-gradient(135deg, #fdfdfd, #f7f1f9);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+.details-text h2 {
+  color: #b315b3;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #d8b4fe;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+}
+
+.details-text p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.details-text ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.details-text ul li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.details-text ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #b315b3;
+  font-weight: bold;
+}
+
+/* Colonna immagini */
+.details-images-grid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 300px;
+}
+
+.details-images-grid .main-image {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+/* Slider immagini secondarie */
+.sub-images-slider {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sub-images-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  flex: 1;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+.sub-images-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.sub-images-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+.sub-images-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sub-images-container .sub-image {
+  flex: 0 0 auto;
+  width: 150px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.sub-images-container .sub-image:hover {
+  transform: scale(1.05);
+}
+
+/* Bottoni frecce */
+.slide-btn {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  border-radius: 5px;
+}
+
+/* Overlay immagine ingrandita */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.image-overlay img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+
+.image-overlay img:hover {
+  transform: scale(1.05);
+}
+
+/* ----------------------- */
+/* Responsive */
+/* ----------------------- */
+@media (max-width: 992px) {
+  .apartment-details,
+  .about-details {
+    flex-direction: column;
+  }
+
+  .details-images-grid .main-image,
+  .sub-images-container .sub-image {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .booking-card-row {
+    top: 55%;
+  }
+
+  .details-text,
+  .details-images-grid {
+    width: 100%;
+  }
+
+  .details-images-grid {
+    flex-direction: column;
+  }
+
+  .sub-images-container {
+    overflow-x: scroll;
+  }
+}
