@@ -1,3 +1,10 @@
 @import "bootstrap";
 @import "bootstrap-icons";
 /* ho installato anche il pacchetto package version: @ng-bootstrap/ng-bootstrap@18.0.0. per usare i componenti interattivi( modali, tooltio,dropdown, carusel ecc) in modo nativo Angular senza dover scrivere logica js manuale, */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #673da5; /* colore sotto tutte le sezioni */
+}

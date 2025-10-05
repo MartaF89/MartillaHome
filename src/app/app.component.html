@@ -27,7 +27,7 @@
 
       <div class="details-images-grid">
         <img
-          src="/camera.webp"
+          src="/Camera-Da-Letto-Boho-Chic-16.webp"
           alt="Camera"
           class="main-image"
           (click)="openImage('/camera.webp')"
@@ -105,12 +105,98 @@
   </section>
 
   <section id="servizi" class="section">
-    <h2>Servizi</h2>
-    <p>Testo della sezione Servizi...</p>
+    <div class="about-details">
+      <div class="details-text">
+        <h2>Servizi</h2>
+        <p>
+          Scopri tutti i comfort che offriamo per rendere il tuo soggiorno
+          indimenticabile.
+        </p>
+        <ul>
+          <li>Wi-Fi gratuito</li>
+          <li>Parcheggio riservato agli ospiti</li>
+          <li>Convenzioni con i migliori ristoranti</li>
+        </ul>
+      </div>
+
+      <div class="details-images-grid">
+        <img
+          src="/wifi.avif"
+          alt="Camera"
+          class="main-image"
+          (click)="openImage('/camera.webp')"
+        />
+
+        <!-- Slider immagini secondarie -->
+        <div class="sub-images-slider">
+          <button class="slide-btn left" (click)="slideLeft()">‹</button>
+          <div class="sub-images-container">
+            <img
+              *ngFor="let img of serviziImages"
+              [src]="img"
+              alt="Dettaglio"
+              class="sub-image"
+              (click)="openImage(img)"
+            />
+          </div>
+          <button class="slide-btn right" (click)="slideRight()">›</button>
+        </div>
+      </div>
+      <!-- chiude details-images-grid -->
+    </div>
+    <!-- chiude apartment-details -->
   </section>
 
   <section id="contatti" class="section">
-    <h2>Contatti</h2>
-    <p>Testo della sezione Contatti...</p>
+    <div class="about-details">
+      <div class="details-text">
+        <h2>Contattaci</h2>
+        <p>Hai domande o vuoi prenotare? Contattaci:</p>
+        <ul>
+          <li>📞 Telefono: +39 123 456 789</li>
+          <li>✉ Email: info&#64;martilla.com</li>
+          <li>📍 Indirizzo: Via Roma 12, 00100 Roma</li>
+        </ul>
+      </div>
+
+      <div class="details-images-grid">
+        <form
+          class="contact-form"
+          [formGroup]="contactForm"
+          (submit)="inviaMessaggio()"
+        >
+          <input
+            type="text"
+            placeholder="Il tuo nome"
+            formControlName="nome"
+            required
+          />
+          <span style="color: red" *ngIf="nome?.touched && nome?.invalid"
+            >Il nome è obbligatorio</span
+          >
+          <input
+            type="email"
+            placeholder="La tua email"
+            formControlName="email"
+            required
+          />
+          <span style="color: red" *ngIf="email?.touched && email?.invalid"
+            >L'email è obbligatoria</span
+          >
+          <textarea
+            placeholder="Messaggio"
+            formControlName="messaggio"
+            rows="4"
+            required
+          ></textarea>
+          <span
+            style="color: red"
+            *ngIf="messaggio?.touched && messaggio?.invalid"
+            >Il messaggio è obbligatorio</span
+          >
+          <button type="submit" [disabled]="contactForm.invalid">Invia</button>
+        </form>
+      </div>
+    </div>
   </section>
 </div>
