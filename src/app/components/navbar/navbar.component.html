@@ -45,16 +45,34 @@
       <div class="ngb-offcanvas-body">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link menu-link" href="#">🏠 Home</a>
+            <a class="nav-link menu-link" href="#"> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-link" href="#">ℹ️ Chi Siamo</a>
+            <a
+              class="nav-link menu-link"
+              href="#chi-siamo"
+              (click)="scrollTo('chi-siamo', offcanvas)"
+            >
+              Chi Siamo</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-link" href="#">🛋️ Servizi</a>
+            <a
+              class="nav-link menu-link"
+              href="#servizi"
+              (click)="scrollTo('servizi', offcanvas)"
+            >
+              Servizi</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link menu-link" href="#">📞 Contatti</a>
+            <a
+              class="nav-link menu-link"
+              href="#contatti"
+              (click)="scrollTo('contatti', offcanvas)"
+            >
+              Contatti</a
+            >
           </li>
         </ul>
       </div>

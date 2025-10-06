@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 @Component({
@@ -8,7 +9,10 @@ import { NgbOffcanvas } from '@ng-bootstrap/ng-bootstrap';
 })
 export class NavbarComponent {
   offcanvasOpen = false;
-  constructor(private offcanvasService: NgbOffcanvas) {} //Qui inietto il servizio di ng-bootstrap che gestisce gli offcanvas.
+  constructor(
+    private offcanvasService: NgbOffcanvas,
+    private viewportScroller: ViewportScroller
+  ) {} //Qui inietto il servizio di ng-bootstrap che gestisce gli offcanvas.
   openOffcanvas(content: any) {
     this.offcanvasOpen = true;
     this.offcanvasService
@@ -16,6 +20,12 @@ export class NavbarComponent {
       .result.finally(() => {
         this.offcanvasOpen = false;
       });
+  }
+  scrollTo(sectionId: string, offcanvas?: any) {
+    this.viewportScroller.scrollToAnchor(sectionId);
+    if (offcanvas) {
+      offcanvas.dismiss();
+    }
   }
 }
 // Quando chiamo offcanvasService.open(...), Angular restituisce un oggetto OffcanvasRef, che ha una proprietà ->.result. Questa è una Promise che si risolve quando l’offcanvas viene chiuso.

@@ -24,17 +24,6 @@
   color: rgb(179, 21, 179);
 }
 
-/* Offcanvas */
-.offcanvas {
-  background: linear-gradient(
-    to right,
-    rgba(254, 245, 152, 0.8),
-    rgba(254, 245, 152, 0.2)
-  );
-  color: #4a2c2a;
-  padding: 2rem; /* spazio interno più generoso */
-}
-
 /* Titolo offcanvas */
 .offcanvas .offcanvas-title {
   font-family: "Montserrat", sans-serif;
@@ -68,7 +57,7 @@
 /* Link offcanvas */
 .menu-link {
   font-size: 1.5rem; /* più grandi */
-  margin: 15px 0;
+  margin: 15px 15px;
   color: #4a2c2a;
   transition: color 0.3s, transform 0.2s;
   display: block;
